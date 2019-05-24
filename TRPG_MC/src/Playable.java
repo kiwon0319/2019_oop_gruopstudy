@@ -1,4 +1,8 @@
 public class Playable extends Players{
+    public Playable(String _name){
+        this.name = _name;
+    }
+
     @Override
     void makeStat() {
         cp = 0;
@@ -38,7 +42,10 @@ public class Playable extends Players{
             sanMax = 99 - cp;
         }
         san = sanMax;
+    }
 
-
+    static void saveStat(Playable[] playable) {
+        Json data = new Json(playable);
+        data.saveJson();
     }
 }
