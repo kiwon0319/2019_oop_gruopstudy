@@ -34,11 +34,16 @@ public class Npc extends Players {
         if(know > 99)
             know = 99;
 
-        maxHp = (con + siz) % 2;;
+        maxHp = (con + siz) % 2;
         hp = maxHp;
         maxMp = pow;
         mp = maxMp;
 
         db = siz + str;
+    }
+
+    static void saveStat(Playable[] playable) {
+        Json data = new Json(playable);
+        data.saveJson();
     }
 }

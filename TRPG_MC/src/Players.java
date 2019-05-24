@@ -29,4 +29,3 @@ abstract class Players {
     abstract void makeStat();
 
 }
-

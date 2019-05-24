@@ -1,10 +1,10 @@
 public class Playable extends Players{
 
-    public Playable (String _name){
-        this.name = _name;
-    }
+        public Playable (String _name){
+            this.name = _name;
+        }
 
-    @Override
+        @Override
     void makeStat() {
         int san = pow * 5;
             if(san >99)
@@ -37,5 +37,10 @@ public class Playable extends Players{
         int mp = maxMp;
 
         int db = siz + str;
+    }
+
+    static void saveStat(Playable[] playable) {
+            Json data = new Json(playable);
+            data.saveJson();
     }
 }
