@@ -41,4 +41,9 @@ public class Npc extends Players {
 
         db = siz + str;
     }
+
+    static void saveStat(Playable[] playable) {
+        Json data = new Json(playable);
+        data.saveJson();
+    }
 }
