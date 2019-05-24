@@ -1,11 +1,10 @@
 public class Playable extends Players {
-    @Override
-    
     public Playable (String _name){
         this.name = _name;
     }
-    
-    void makeStat{
+
+    @Override
+    void makeStat() {
         str = Dice.roll(3,6);
         con = Dice.roll(3,6);
         siz = Dice.roll(2,6) + 6;
@@ -20,12 +19,12 @@ public class Playable extends Players {
         }
         
         luck = pow * 5;
-        if(luck >= 100){
+        if (luck >= 100){
             luck = 99;
         }
         
         know = edu * 5;
-        if(know >= 100){
+        if (know >= 100){
             know = 99;
         }
         
@@ -33,6 +32,11 @@ public class Playable extends Players {
         
         hp = (con + siz) / 2;
         mp = maxMp = pow;
+    }
+
+    static void saveStat(Playable[] playable) {
+        Json data = new Json(playable);
+        data.saveJson();
     }
     
 }
