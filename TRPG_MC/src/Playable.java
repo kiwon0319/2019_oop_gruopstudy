@@ -43,7 +43,11 @@ public class Playable extends Players{
         }
         san = sanMax;
 
+    }
 
+    static void saveStat(Playable[] playable){
+        JSON data=new JSON(playable);
+        data.saveJSON();
     }
 }
 

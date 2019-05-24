@@ -28,5 +28,8 @@ abstract class Players {
     //스탯계산 메소드
     abstract void makeStat();
 
+    //스탯저장 메소드 없엠ㅋ
+
+
 }
 
