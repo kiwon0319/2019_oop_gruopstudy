@@ -38,4 +38,5 @@ public class Playable extends Players{
 
         int db = siz + str;
     }
+
 }

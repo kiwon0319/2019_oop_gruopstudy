@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class NPC  extends  Playaers {
+public class NPC  extends  Players {
 
     public NPC (String _name) { this.name = _name; }
 
@@ -17,5 +17,10 @@ public class NPC  extends  Playaers {
         System.out.print("\n교육 입력 >> "); edu = scan.nextInt();
     }
 
+    static void saveStat(Playable[] playable) {
+        Json data = new Json(playable);
+        data.saveJson();
+
+    }
 
 }
