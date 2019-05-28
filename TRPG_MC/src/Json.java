@@ -13,7 +13,7 @@ public class Json {
         playables = _playable;
     }
 
-    public JSONObject stat(int i){
+    private JSONObject stat(int i){
         JSONObject statObject = new JSONObject();
         statObject.put("str",playables[i].str);
         statObject.put("con",playables[i].con);
@@ -27,7 +27,7 @@ public class Json {
         return statObject;
     }
 
-    public JSONObject state(int i){
+    private JSONObject state(int i){
         JSONObject stateObject = new JSONObject();
 
         stateObject.put("Hp",playables[i].hp);
@@ -37,7 +37,7 @@ public class Json {
         return stateObject;
     }
 
-    public JSONObject charactor(int i){
+    private JSONObject charactor(int i){
         JSONObject charObject = new JSONObject();
 
         charObject.put("name", playables[i].name);
@@ -47,7 +47,7 @@ public class Json {
         return charObject;
     }
 
-    public void buildData(){
+    private void buildData(){
         for(int i = 0; i < playables.length; i++){
             data.add(charactor(i));
         }
@@ -58,6 +58,7 @@ public class Json {
     }
 
     public void saveJson(){
+        buildData();
         try{
             String path = System.getProperty("user.dir");
             FileWriter file = new FileWriter(path + File.separator + "data.json");

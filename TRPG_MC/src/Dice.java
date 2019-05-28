@@ -6,9 +6,7 @@ public class Dice {
         Random random = new Random();
 
         result = random.nextInt(_maxNumber) + 1;
-
-
-        System.out.println("주사위 결과: " + result);
+        
         return result;
     }
 
